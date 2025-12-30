@@ -10,16 +10,26 @@ export default function UploadForm() {
       action="https://formspree.io/f/xpqzbpwk"
       method="POST"
       onSubmit={() => setLoading(true)}
-      className="max-w-xl mx-auto space-y-6"
+      className="max-w-xl mx-auto space-y-6 bg-white p-6 rounded-xl border"
     >
+      {/* Intro */}
+      <div className="text-center space-y-2">
+        <h3 className="text-xl font-semibold">
+          Submit your file for transcription
+        </h3>
+        <p className="text-sm text-gray-500">
+          Human-reviewed transcription delivered within 24 hours
+        </p>
+      </div>
+
       {/* Google Drive Link */}
       <div>
-        <label className="block mb-2 font-medium">
+        <label className="block mb-1 font-medium">
           Google Drive Link
-          <span className="block text-xs text-gray-500">
-            رابط الملف (صوت أو فيديو)
-          </span>
         </label>
+        <p className="text-xs text-gray-500 mb-2">
+          Audio or video file (Drive / YouTube / Dropbox)
+        </p>
         <input
           type="url"
           name="google_drive_link"
@@ -31,11 +41,8 @@ export default function UploadForm() {
 
       {/* Language */}
       <div>
-        <label className="block mb-2 font-medium">
+        <label className="block mb-1 font-medium">
           File Language
-          <span className="block text-xs text-gray-500">
-            لغة المحتوى
-          </span>
         </label>
         <select
           name="language"
@@ -44,17 +51,36 @@ export default function UploadForm() {
         >
           <option value="">Select language</option>
           <option value="English">English</option>
-          <option value="Arabic">Arabic</option>
+          <option value="Arabic">Arabic (All dialects)</option>
         </select>
+      </div>
+
+      {/* Transcript Type */}
+      <div>
+        <label className="block mb-1 font-medium">
+          Transcript Type
+        </label>
+        <select
+          name="transcript_type"
+          required
+          className="w-full border px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-black"
+        >
+          <option value="Clean Text">
+            Clean Text (Recommended)
+          </option>
+          <option value="With Timestamps">
+            With Timestamps
+          </option>
+        </select>
+        <p className="text-xs text-gray-500 mt-1">
+          Clean text removes filler words and repetitions
+        </p>
       </div>
 
       {/* Output Format */}
       <div>
-        <label className="block mb-2 font-medium">
+        <label className="block mb-1 font-medium">
           Output Format
-          <span className="block text-xs text-gray-500">
-            صيغة الملف النهائي
-          </span>
         </label>
         <select
           name="output_format"
@@ -66,34 +92,14 @@ export default function UploadForm() {
         </select>
       </div>
 
-      {/* Transcript Type */}
-      <div>
-        <label className="block mb-2 font-medium">
-          Transcript Type
-          <span className="block text-xs text-gray-500">
-            نوع التفريغ
-          </span>
-        </label>
-        <select
-          name="transcript_type"
-          required
-          className="w-full border px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-black"
-        >
-          <option value="Clean Text">Clean Text (بدون تكرار)</option>
-          <option value="With Timestamps">
-            With Timestamps (بتوقيت)
-          </option>
-        </select>
-      </div>
-
       {/* Email */}
       <div>
-        <label className="block mb-2 font-medium">
+        <label className="block mb-1 font-medium">
           Your Email
-          <span className="block text-xs text-gray-500">
-            سنرسل لك النتيجة هنا
-          </span>
         </label>
+        <p className="text-xs text-gray-500 mb-2">
+          We’ll send pricing and delivery details here
+        </p>
         <input
           type="email"
           name="email"
@@ -103,22 +109,27 @@ export default function UploadForm() {
         />
       </div>
 
-      {/* Redirect */}
+      {/* Hidden redirect */}
       <input type="hidden" name="_redirect" value="/thank-you" />
 
       {/* Submit */}
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-black text-white py-4 rounded text-lg font-medium hover:bg-gray-800 transition disabled:opacity-60"
+        className="w-full bg-black text-white py-4 rounded-lg text-lg font-medium hover:bg-gray-800 transition disabled:opacity-60"
       >
-        {loading ? 'Submitting...' : 'Submit Request'}
+        {loading ? 'Submitting request...' : 'Get price & delivery time'}
       </button>
 
-      {/* Trust note */}
-      <p className="text-center text-xs text-gray-500">
-        🔒 Your files are handled confidentially and never shared.
-      </p>
+      {/* Trust */}
+      <div className="text-center space-y-1">
+        <p className="text-xs text-gray-500">
+          🔒 Files are handled confidentially
+        </p>
+        <p className="text-xs text-gray-500">
+          💬 You’ll receive a response within a few hours
+        </p>
+      </div>
     </form>
   )
-}  
+}
