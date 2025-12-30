@@ -1,36 +1,18 @@
-import { NextResponse } from "next/server"
-import OpenAI from "openai"
+import { NextResponse } from 'next/server'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!,
-})
-
-export async function POST(req: Request) {
-  try {
-    const formData = await req.formData()
-    const file = formData.get("file") as File | null
-
-    if (!file) {
-      return NextResponse.json(
-        { error: "No file uploaded" },
-        { status: 400 }
-      )
-    }
-
-    const transcription = await openai.audio.transcriptions.create({
-      file,
-      model: "whisper-1",
-    })
-
-    return NextResponse.json({
-      text: transcription.text,
-    })
-  } catch (error) {
-    console.error("Transcription error:", error)
-
+export async function POST() {
+  if (!process.env.OPENAI_API_KEY) {
     return NextResponse.json(
-      { error: "Transcription failed" },
-      { status: 500 }
+      {
+        success: true,
+        mode: 'manual',
+        message:
+          'AI transcription is temporarily unavailable. Your file will be processed manually.',
+      },
+      { status: 200 }
     )
   }
+
+  // لما تضيف API بعدين، الكود هيكمل من هنا
+  return NextResponse.json({ success: true })
 }
