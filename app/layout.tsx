@@ -1,10 +1,14 @@
 import './globals.css'
+import Navbar from './components/Navbar'
 import WhatsAppButton from './components/WhatsAppButton'
 
 export const metadata = {
-  title: 'AI Media Transcription',
+  title: {
+    default: 'AI Media Transcription',
+    template: '%s | AI Media',
+  },
   description:
-    'Professional human-made audio and video transcription services.',
+    'Professional human-made audio and video transcription services in Arabic & English.',
 }
 
 export default function RootLayout({
@@ -25,9 +29,13 @@ export default function RootLayout({
         <meta name="google" content="notranslate" />
       </head>
 
-      <body className="relative min-h-screen bg-white text-gray-900 antialiased">
+      <body className="min-h-screen bg-white text-gray-900 antialiased flex flex-col">
+        
+        {/* Navbar */}
+        <Navbar />
+
         {/* Main Content */}
-        <main className="min-h-screen">
+        <main className="flex-1 pt-20">
           {children}
         </main>
 

@@ -172,5 +172,5 @@ export default function ArabicProductivitySample() {
         </div>
       </div>
     </section>
-  )
+  ) 
 }

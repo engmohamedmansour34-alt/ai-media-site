@@ -5,7 +5,7 @@ export default function WhatsAppButton() {
   const message =
     'Hello, I would like to ask about manual transcription service.'
 
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+  const url = `https://wa.me/${+201115579008}?text=${encodeURIComponent(
     message
   )}`
 
