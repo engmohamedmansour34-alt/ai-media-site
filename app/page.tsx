@@ -1,42 +1,46 @@
 import Hero from './components/Hero'
 import Trust from './components/Trust'
+import PodcastFeature from './components/PodcastFeature'
 import WhyUs from './components/WhyUs'
 import FeaturedTools from './components/FeaturedTools'
 import FeaturedArticles from './components/FeaturedArticles'
 import Samples from './components/Samples'
 import HowItWorks from './components/HowItWorks'
-import BottomCTA from './components/BottomCTA'
 import HomeFAQ from './components/HomeFAQ'
+import BottomCTA from './components/BottomCTA'
 
 export default function Home() {
   return (
     <>
-      {/* Hero: Core Value Proposition */}
+      {/* 1️⃣ Hero: Core Value Proposition */}
       <Hero />
 
-      {/* Trust signals: credibility & reassurance */}
+      {/* 2️⃣ Trust signals: credibility & reassurance */}
       <Trust />
 
-      {/* Why human transcription / authority positioning */}
+      {/* 3️⃣ High-intent service: Podcast Transcription */}
+      <PodcastFeature />
+
+      {/* 4️⃣ Authority positioning: why human transcription */}
       <WhyUs />
 
-      {/* Internal linking to money & SEO pages */}
+      {/* 5️⃣ Internal linking to money & SEO pages */}
       <FeaturedTools />
       <FeaturedArticles />
 
-      {/* Proof of quality */}
+      {/* 6️⃣ Proof of quality */}
       <Samples />
 
-      {/* Conversion explanation */}
+      {/* 7️⃣ Conversion explanation */}
       <HowItWorks />
 
-      {/* FAQ for SEO + trust */}
+      {/* 8️⃣ FAQ for objections + SEO */}
       <HomeFAQ />
 
-      {/* Final conversion push */}
+      {/* 9️⃣ Final conversion push */}
       <BottomCTA />
 
-      {/* FAQ Schema for SEO */}
+      {/* 🔍 FAQ Schema for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -68,7 +72,7 @@ export default function Home() {
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text":
-                    "Human transcription is best for publishing, subtitles, legal content, academic work, and client delivery."
+                    "Human transcription is ideal for publishing, subtitles, podcasts, legal content, academic work, and client delivery."
                 }
               },
               {

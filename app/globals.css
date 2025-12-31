@@ -2,8 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+/* =========================
+   Base Reset & Typography
+   ========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  @apply bg-white text-gray-900 antialiased;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Remove default margins */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* Better link defaults */
+a {
+  @apply text-gray-900 no-underline;
+}
+
+a:hover {
+  @apply text-emerald-600;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  @apply font-semibold tracking-tight;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Buttons */
+button {
+  @apply focus:outline-none focus:ring-2 focus:ring-emerald-500;
 }
