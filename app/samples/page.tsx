@@ -40,8 +40,19 @@ export default function SamplesPage() {
           <span className="font-medium text-black">
             100% human-made transcription
           </span>
-          . See the quality before you trust us with your file.
+          .
         </p>
+
+        <p className="text-sm text-gray-500 mt-4">
+          No AI-only tools · Cleaned · Proofread · Ready to publish
+        </p>
+      </div>
+
+      {/* Social Proof */}
+      <div className="flex justify-center gap-6 text-sm text-gray-600 mb-24 flex-wrap">
+        <span>✔ Arabic & English</span>
+        <span>✔ Human-reviewed</span>
+        <span>✔ Used by content creators & educators</span>
       </div>
 
       {/* Samples Grid */}
@@ -51,7 +62,7 @@ export default function SamplesPage() {
             key={index}
             className="grid lg:grid-cols-2 gap-14 items-center"
           >
-            {/* Thumbnail Card */}
+            {/* Thumbnail */}
             <Link
               href={sample.href}
               className="group block max-w-lg"
@@ -66,7 +77,6 @@ export default function SamplesPage() {
                   className="w-full h-64 object-cover group-hover:scale-[1.03] transition"
                 />
 
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
                   <span className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium">
                     View Full Sample →
@@ -74,7 +84,6 @@ export default function SamplesPage() {
                 </div>
               </div>
 
-              {/* Badge */}
               <span
                 className={`inline-block mt-4 text-xs font-semibold px-4 py-1 rounded-full ${sample.badgeColor}`}
               >
@@ -88,8 +97,13 @@ export default function SamplesPage() {
                 {sample.title}
               </h2>
 
-              <p className="text-gray-600 mb-6 text-lg">
+              <p className="text-gray-600 mb-4 text-lg">
                 {sample.description}
+              </p>
+
+              {/* Before / After Hint */}
+              <p className="text-xs text-gray-500 mb-2">
+                Preview from the cleaned transcript (after manual review)
               </p>
 
               {/* Transcript Preview */}
@@ -101,13 +115,21 @@ export default function SamplesPage() {
                 <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-50 to-transparent rounded-b-xl" />
               </div>
 
-              <Link
-                href={sample.href}
-                className="inline-flex items-center gap-2 font-medium text-black hover:underline"
-              >
-                View full transcription
-                <span aria-hidden>→</span>
-              </Link>
+              <div className="flex items-center gap-6">
+                <Link
+                  href={sample.href}
+                  className="inline-flex items-center gap-2 font-medium text-black hover:underline"
+                >
+                  View full transcription →
+                </Link>
+
+                <Link
+                  href="/upload"
+                  className="text-sm text-gray-600 underline hover:text-black"
+                >
+                  Get similar quality
+                </Link>
+              </div>
             </div>
           </div>
         ))}
@@ -121,7 +143,7 @@ export default function SamplesPage() {
 
         <p className="text-gray-600 mb-8 max-w-xl mx-auto">
           Upload your audio or video file and receive a clean, accurate,
-          human-made transcript — fast and confidential.
+          human-reviewed transcript — fast and confidential.
         </p>
 
         <Link
