@@ -4,6 +4,7 @@ import PodcastFeature from './components/PodcastFeature'
 import WhyUs from './components/WhyUs'
 import FeaturedTools from './components/FeaturedTools'
 import FeaturedArticles from './components/FeaturedArticles'
+import FeaturedProducts from './components/FeaturedProducts'
 import Samples from './components/Samples'
 import HowItWorks from './components/HowItWorks'
 import HomeFAQ from './components/HomeFAQ'
@@ -27,6 +28,9 @@ export default function Home() {
       {/* 5️⃣ Internal linking to money & SEO pages */}
       <FeaturedTools />
       <FeaturedArticles />
+
+      {/* 🛒 Digital Products (Books / Systems) */}
+      <FeaturedProducts />
 
       {/* 6️⃣ Proof of quality */}
       <Samples />
