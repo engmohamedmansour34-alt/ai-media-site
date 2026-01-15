@@ -1,7 +1,9 @@
 import './globals.css'
+
 import Navbar from './components/Navbar'
-import WhatsAppButton from './components/WhatsAppButton'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
+import Analytics from './components/Analytics'
 
 export const metadata = {
   title: {
@@ -30,6 +32,9 @@ export default function RootLayout({
       </head>
 
       <body className="min-h-screen bg-white text-gray-900 antialiased flex flex-col">
+
+        {/* 📊 Google Analytics (Client-only, SPA safe) */}
+        <Analytics />
 
         {/* 🔝 Header */}
         <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
